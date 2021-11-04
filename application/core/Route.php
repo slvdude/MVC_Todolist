@@ -23,8 +23,6 @@ class Route
 			$controller_name = 'Auth';
 			$action_name = 'auth';
 		}
-		
-
 
 		$model_name = 'Model'.$controller_name;
 		$controller_name = 'Controller'.$controller_name;

@@ -15,10 +15,10 @@ class ControllerAuth extends Controller
             $login = $_POST['login'];
             $password = $_POST['password'];
 
-            if($this->userExist($login, $password) == true) {
+            if($this->model->userExist($login, $password) == true) {
                 $this->view->generate('todo_view.php', 'template_view.php');
             }
-            elseif($this->setUser($login, $password) == true) {
+            elseif($this->model->setUser($login, $password) == true) {
                 $this->view->generate('todo_view.php', 'template_view.php');
             }
         }
