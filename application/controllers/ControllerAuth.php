@@ -1,7 +1,6 @@
 <?php
 
-class ControllerAuth extends Controller
-{
+class ControllerAuth extends Controller {
     public $login;
     public $password;
     
@@ -10,11 +9,10 @@ class ControllerAuth extends Controller
 		$this->view = new View();
 	}
 
-	function action_auth() {	
-        if(isset($_POST['login']) && isset($_POST['password'])) {
-            $login = $_POST['login'];
-            $password = $_POST['password'];
-
+	public function action_auth() {	
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        if(!empty($_POST['login']) && !empty($_POST['password'])) {
             if($this->model->userExist($login, $password) == true) {
                 $this->view->generate('todo_view.php', 'template_view.php');
             }
@@ -22,5 +20,16 @@ class ControllerAuth extends Controller
                 $this->view->generate('todo_view.php', 'template_view.php');
             }
         }
+        else {
+            echo '<p style="color: red;">Input cannot be empty</p>';
+        }
 	}
+
+    private function inputNotEmpty() {
+        $isEmpty = true;
+        if(empty($login) || empty($password)) {
+            $isEmpty = false;
+        }
+        return $isEmpty;
+    }
 }

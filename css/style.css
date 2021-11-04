@@ -4,4 +4,13 @@ body {
 
 .form-container {
     margin: 0 auto;
+    width: 500px;
+}
+
+.form-container input {
+    margin-top: 10px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
 }

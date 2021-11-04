@@ -2,22 +2,10 @@
 
 class Route
 {
-	static function start()
-	{
+	static function start() {
+		
 		$controller_name = 'Main';
 		$action_name = 'index';
-		
-		/*$routes = explode('/', $_SERVER['REQUEST_URI']);
-
-		if ( !empty($routes[1]) )
-		{	
-			$controller_name = $routes[1];
-		}
-		
-		if ( !empty($routes[2]) )
-		{
-			$action_name = $routes[2];
-		}*/
 
 		if(isset($_POST['submit'])) {
 			$controller_name = 'Auth';

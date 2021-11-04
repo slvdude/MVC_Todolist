@@ -1,4 +1,10 @@
-<div class="todo-container">`
+<?php
+    require 'application/models/ModelTodo.php';
+    require 'application/controllers/ControllerTodo.php';
+    $contr = new ControllerTodo($_SESSION['user_id']);
+    $todoArr = $contr->getAllTodos();
+?>
+<div class="todo-container">
     <h1 style="text-align: center;">Task list</h1>
     <hr>
     <form action="" method="POST" class="create_task">
